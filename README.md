@@ -1,2 +1,2 @@
 # GolangJourney
-every program that i've made while learning Go language
+For copyright purpose, i'm learning it on ProgrammerZamanNow
