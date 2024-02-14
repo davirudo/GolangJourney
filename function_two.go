@@ -20,6 +20,11 @@ func sumAll(numbers ...int) int { //..int adalah slice integer
 	return total
 }
 
+//Function Value
+func goodBye(name string) string {
+	return "Good Bye " + name
+}
+
 func main() {
 	first, mid, last := namedReturnValues()
 	fmt.Println(first,mid,last)
@@ -29,6 +34,9 @@ func main() {
 	//  fmt.Println(sumAll(5, 15, 10, 20, 50))
 
 	//Slice parameter
-	numbers := []int{5, 15, 10, 20, 50} //terlanjur memiliki slice
-	fmt.Println(sumAll(numbers...)) //dikasih ... diakhir agar bisa dibaca oleh sumAll
+	angka := []int{5, 15, 10, 20, 150} //terlanjur memiliki slice
+	fmt.Println(sumAll(angka...)) //dikasih ... diakhir agar bisa dibaca oleh sumAll
+
+	value := goodBye //bisa menjadikan function menjadi variable
+	fmt.Println(value("Golang"))
 }
