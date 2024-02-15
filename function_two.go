@@ -25,20 +25,6 @@ func goodBye(name string) string {
 	return "Good Bye " + name
 }
 
-//Function as Paramter
-//ada function didalam function
-func helloWithFilter(name string, filter func(string) string) {
-	fmt.Println("Hello", filter(name))
-}
-
-func spamFilter(name string) string {
-	if name == "Budi" {
-		return "tak dikenal"
-	} else {
-		return name
-	}
-}
-
 //
 
 func main() {
@@ -55,8 +41,4 @@ func main() {
 
 	value := goodBye //bisa menjadikan function menjadi variable
 	fmt.Println(value("Golang"))
-
-	helloWithFilter("David", spamFilter)
-	filter := spamFilter
-	helloWithFilter("Budi", filter)
 }
