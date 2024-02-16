@@ -32,6 +32,17 @@ func spamFiltertype(name string) string {
 	}
 }
 
+//Anonymous Function
+func registerUser(name string, blacklist func(string) bool) {
+	if blacklist(name) {
+		fmt.Println("You Are Blocked", name)
+	} else {
+	fmt.Println("Halo", name)	
+	}
+}
+
+//
+
 func main() {
 	//Function as Paramter
 	helloWithFilter("David", spamFilter)
@@ -42,5 +53,17 @@ func main() {
 	helloWithFiltertype("David", spamFiltertype)
 	filtertype := spamFiltertype
 	helloWithFiltertype("Budi", filtertype)
+
+	//Anonymous function
+	blacklist := func(name string) bool {
+		return name == "Budi"
+	}
+	registerUser("David", blacklist)
+	//atau bisa langsung
+	registerUser("Budi", func(name string) bool {
+		return name == "Budi"
+	})
+
+
 
 }
