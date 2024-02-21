@@ -15,8 +15,4 @@ func main() {
 	fmt.Println(tempat1) //tempat1 ikut berubah
 	fmt.Println(tempat2)
 	fmt.Println()
-
-
-	//Function Operator
-
 }
