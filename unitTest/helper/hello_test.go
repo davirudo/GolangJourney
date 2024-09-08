@@ -50,7 +50,7 @@ func TestFatal(t *testing.T) { //FailNow() with argumen
 func TestAssert(t *testing.T) {
 	result := Hello("David")
 	assert.Equal(t, "Hello David", result, "Result must be 'Hello David'")
-	fmt.Println("Test with Assert done")
+	fmt.Println("TestAssert done")
 }
 
 	//go test
