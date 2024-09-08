@@ -3,7 +3,9 @@ package helper
 import (
 	"fmt"
 	"testing"
+	"github.com/stretchr/testify/assert"
 )
+
 // func TestPanic(t *testing.T) {
 // 	result := Hello("David")
 
@@ -43,6 +45,12 @@ func TestFatal(t *testing.T) { //FailNow() with argumen
 		t.Error("The result must be 'Hello David'")
 	}
 	fmt.Println("TestFatal done")
+}
+
+func TestAssert(t *testing.T) {
+	result := Hello("David")
+	assert.Equal(t, "Hello David", result, "Result must be 'Hello David'")
+	fmt.Println("Test with Assert done")
 }
 
 	//go test
