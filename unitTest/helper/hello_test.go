@@ -3,7 +3,9 @@ package helper
 import (
 	"fmt"
 	"testing"
+
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 // func TestPanic(t *testing.T) {
@@ -47,10 +49,16 @@ func TestFatal(t *testing.T) { //FailNow() with argumen
 	fmt.Println("TestFatal done")
 }
 
-func TestAssert(t *testing.T) {
+func TestAssert(t *testing.T) { //Fail()
 	result := Hello("David")
 	assert.Equal(t, "Hello David", result, "Result must be 'Hello David'")
 	fmt.Println("TestAssert done")
+}
+
+func TestRequire(t *testing.T) { //FailNow()
+	result := Hello("David")
+	require.Equal(t, "Hello David", result, "Result must be 'Hello David'")
+	fmt.Println("TestRequire done")
 }
 
 	//go test
