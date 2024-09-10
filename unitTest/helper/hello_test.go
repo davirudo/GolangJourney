@@ -62,7 +62,7 @@ func TestRequire(t *testing.T) { //FailNow()
 	fmt.Println("TestRequire done")
 }
 
-func TestSkip(t *testing.T) {
+func TestSkip(t *testing.T) { //skil on some conditional
 	if runtime.GOOS == "darwin" {
 		t.Skip("Cannot run on MacOS")
 	}
@@ -70,6 +70,16 @@ func TestSkip(t *testing.T) {
 	result := Hello("David")
 	assert.Equal(t, "Hello David", result, "Result must be 'Hello David'")
 	fmt.Println("TestAssert done")
+}
+
+func TestMain(m *testing.M) {
+	//before
+	fmt.Println("Before Unit Test")
+	
+	m.Run()
+
+	//after
+	fmt.Println("After Unit Test")
 }
 
 	//go test
