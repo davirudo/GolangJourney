@@ -72,14 +72,25 @@ func TestSkip(t *testing.T) { //skil on some conditional
 	fmt.Println("TestAssert done")
 }
 
-func TestMain(m *testing.M) {
+func TestMain(m *testing.M) { //before and after test
 	//before
 	fmt.Println("Before Unit Test")
-	
 	m.Run()
-
 	//after
 	fmt.Println("After Unit Test")
+}
+
+func TestSubTest(t *testing.T){ //can have sub test
+	t.Run("David", func(t *testing.T) {
+		//subtest
+		result := Hello("David")
+	require.Equal(t, "Hello David", result, "Result must be 'Hello David'")
+	})
+	t.Run("David", func(t *testing.T) {
+		//subtest
+		result := Hello("David")
+	require.Equal(t, "Hi David", result, "Result must be 'Hello David'")
+	})
 }
 
 	//go test
