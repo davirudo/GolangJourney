@@ -100,3 +100,4 @@ func TestSubTest(t *testing.T){ //can have sub test
 	//go test -v (with detail execution information)
 	//go test -v -run TestName (if u just wanna execute 1 test)
 	//gotest ./... (run test on diffrent folder)
+	//go test -v -run=/Name (run every unitTest with specific name)
