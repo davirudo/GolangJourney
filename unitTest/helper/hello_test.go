@@ -88,8 +88,11 @@ func TestSubTest(t *testing.T){ //can have sub test
 	})
 	t.Run("David", func(t *testing.T) {
 		//subtest
-		result := Hello("David")
-	require.Equal(t, "Hi David", result, "Result must be 'Hello David'")
+		result := Hello("Dave")
+	require.Equal(t, "Hi Dave", result, "Result must be 'Hi Dave'")
+	
+	//if just want to run one subtest
+	//go test -v -run=TestSubTest/David
 	})
 }
 
